@@ -30,7 +30,7 @@ def zero_one_bfs(graph,source_node):
 def path(t,s):
     if t == s:
         paths.append(t)
-        print 'Path:' , paths
+        print 'Path:' , paths[::-1]
     else:
         paths.append(t)
         path(previous[t],s)
