@@ -40,6 +40,7 @@ def main():
         graph[v2].append((v1,w))
         edges_list.append((w,v1,v2))
 
+    edges_list.sort()
     krushkal(graph)
 
 if __name__=='__main__':
