@@ -24,6 +24,10 @@ def bellman_ford(source_node, n):
     print previous
     print distance
 
+## 3 3
+## 1 2 1
+## 2 3 0
+## 1 3 1
 def main():
     n,e = map(int,raw_input().split())
     for count in range(e):
