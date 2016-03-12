@@ -20,6 +20,17 @@ def max_heapify( j, length_arr2):
         arr2[j] = temp
         max_heapify(largest,length_arr2)
         
+def heap_sort(arr2,length_arr2):
+    i = length_arr2-1
+    while i>=1:
+        temp = arr2[0]
+        arr2[0]=arr2[i]
+        arr2[i]=temp
+        length_arr2 = length_arr2-1
+        max_heapify(0,length_arr2)
+        i = i-1
+    print 'sorted array:', arr2
+    
 
 def main():
     arr1 = map(int,raw_input().split())
@@ -33,8 +44,12 @@ def main():
     while j>=0:
         max_heapify(j,length_arr2)
         j = j-1
-    print 'output heap:',arr2
         
+    print 'output heap:',arr2
+    
+    heap_sort(arr2,length_arr2)
+
+    
 
 if __name__ == '__main__':
     main()
