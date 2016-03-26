@@ -11,17 +11,14 @@ visited = dict()
 def dfs(graph,s):
     stack = list()
     visited[s] = True
-    print 'visited:' + s
-    for adjnode in graph[s]:
-        if visited[adjnode] == False:
-            stack.append(adjnode)
-            while(len(stack)>0):
-                node = stack.pop()
-                visited[node] = True
-                print 'visited:' + node
-                for subadjnode in graph[node]:
-                    if visited[subadjnode] == False:
-                        stack.append(subadjnode)
+    stack.append(s)
+    while(len(stack)>0):
+        node = stack.pop()
+        visited[node] = True
+        print 'visited:' + node
+        for subadjnode in graph[node]:
+            if visited[subadjnode] == False:
+                stack.append(subadjnode)
                 
 
         
