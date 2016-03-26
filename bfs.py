@@ -3,17 +3,22 @@ from collections import defaultdict,deque
 graph = defaultdict(list)
 visited = dict()
 
+##input:
+##4 3
+##1 2
+##2 3
+##3 4
+
 def bfs(graph, s):
     queue = deque()
     queue.append(s)
     while(len(queue) >0):
         v=queue.popleft()
-        if visited[v] == False:
-            visited[v] = True
-            print 'visited:' + v
-            for adjnode in graph[v]:
-                if visited[adjnode] == False:
-                    queue.append(adjnode)
+        visited[v] = True
+        print 'visited:' + v
+        for adjnode in graph[v]:
+            if visited[adjnode] == False:
+                queue.append(adjnode)
     
 def main():
     n,e = map(int,raw_input().split())
