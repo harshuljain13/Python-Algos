@@ -2,20 +2,25 @@ from collections import defaultdict
 graph = defaultdict(list)
 visited = dict()
 
+##input:
+##4 3
+##1 2
+##2 3
+##3 4
+
 def dfs(graph,s):
     stack = list()
     visited[s] = True
+    print 'visited:' + s
     for adjnode in graph[s]:
         if visited[adjnode] == False:
-            visited[adjnode] = True
-            print 'visited:' + adjnode
             stack.append(adjnode)
             while(len(stack)>0):
                 node = stack.pop()
+                visited[node] = True
+                print 'visited:' + node
                 for subadjnode in graph[node]:
                     if visited[subadjnode] == False:
-                        print 'visited:' + subadjnode
-                        visited[subadjnode] = True
                         stack.append(subadjnode)
                 
 
