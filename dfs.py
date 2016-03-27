@@ -14,11 +14,11 @@ def dfs(graph,s):
     stack.append(s)
     while(len(stack)>0):
         node = stack.pop()
-        visited[node] = True
-        print 'visited:' + node
+        print 'visited'+node
         for subadjnode in graph[node]:
             if visited[subadjnode] == False:
                 stack.append(subadjnode)
+                visited[subadjnode] = True
                 
 
         
